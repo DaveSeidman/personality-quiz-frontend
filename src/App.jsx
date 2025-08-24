@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { modeRandomTie } from './utils';
+import { modeRandomTie, shuffle } from './utils';
 import questions from './assets/data/questions.json';
 
 import './index.scss';
@@ -15,16 +15,14 @@ const App = () => {
   const TIMEOUT_DELAY = 20000;
   const TIMEOUT_DURATION = 5000;
 
-  // const start = () => {
-
-  // }
-
   const start = () => {
     setQuestionIndex(0);
-    setResponses([])
-    setPersona()
+    setResponses([]);
+    setPersona();
+    questions.forEach(question => {
+      question.options = shuffle(question.options);
+    });
   }
-
 
   const idleTimeout = () => {
     setAttract(true);
@@ -54,8 +52,6 @@ const App = () => {
     })
   })
 
-
-
   return (
     <div className='app'>
       <div className="questions">
@@ -73,12 +69,11 @@ const App = () => {
                   onClick={(e) => {
                     setResponses(prev => {
                       setQuestionIndex(questionIndex + 1);
-
                       prev[i] = option.id;
                       return prev
                     })
                   }}
-                >{option.text}</button>
+                >{`${option.id} - ${option.text}`}</button>
               ))}
             </div>
           </div>

@@ -21,9 +21,17 @@ $white: rgb(240, 241, 242);
   overflow-x: scroll;
   background: rgb(40, 40, 40);
 
-  h1, h2, p, a, label {
+  h1, h2, p, a, button, label {
     font-family: 'Roboto';
     color: $white;
+  }
+
+  button {
+    margin: 1vh;
+    background: rgba(255, 255, 255, .1);
+    border: 2px solid white;
+    border-radius: 2vh;
+    font-size: 1.5rem;
   }
 
   .questions {
@@ -46,11 +54,6 @@ $white: rgb(240, 241, 242);
         &-option {
           width: 80vw;
           height: 10vh;
-          margin: 1vh;
-          background: rgba(255, 255, 255, .1);
-          border: 2px solid white;
-          border-radius: 2vh;
-          font-size: 1.5rem;
         }
       }
     }
