@@ -1,0 +1,106 @@
+[
+  {
+    "id": "q1",
+    "text": "Your weekend gets unexpectedly free. What do you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Sketch a quick plan: reservation, exhibit, dinner, done.",
+        "persona": "navigator"
+      },
+      {
+        "id": "B",
+        "text": "Grab a backpack and chase whatever sounds fun—no itinerary.",
+        "persona": "adventurer"
+      },
+      {
+        "id": "C",
+        "text": "Text friends/family and organize something everyone enjoys.",
+        "persona": "caretaker"
+      },
+      {
+        "id": "D",
+        "text": "Find a weird pop-up/underground show nobody’s heard of.",
+        "persona": "iconoclast"
+      }
+    ]
+  },
+  {
+    "id": "q2",
+    "text": "You pick the perfect entree from the menu. The waiter says they're out. What do you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Ask for the closest alternative and pick the nearest match.",
+        "persona": "navigator"
+      },
+      {
+        "id": "B",
+        "text": "Tell them to surprise you or choose something you’ve never tried.",
+        "persona": "adventurer"
+      },
+      {
+        "id": "C",
+        "text": "Check what your table is getting and pivot so you can share.",
+        "persona": "caretaker"
+      },
+      {
+        "id": "D",
+        "text": "Ask about off-menu options or customize something unusual.",
+        "persona": "iconoclast"
+      }
+    ]
+  },
+  {
+    "id": "q3",
+    "text": "You find a wallet on the subway platform. What do you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Hand it to the station agent; leave your contact.",
+        "persona": "navigator"
+      },
+      {
+        "id": "B",
+        "text": "Call the first ID/number and return it immediately.",
+        "persona": "adventurer"
+      },
+      {
+        "id": "C",
+        "text": "Ask nearby riders; wait a few minutes, then agent.",
+        "persona": "caretaker"
+      },
+      {
+        "id": "D",
+        "text": "Drop at nearest precinct and post a quick 'found' note.",
+        "persona": "iconoclast"
+      }
+    ]
+  },
+  {
+    "id": "q4",
+    "text": "Which statement feels most like you right now?",
+    "options": [
+      {
+        "id": "A",
+        "text": "I’m disciplined; I like dependable results.",
+        "persona": "navigator"
+      },
+      {
+        "id": "B",
+        "text": "I chase energy; I’ll trade polish for excitement.",
+        "persona": "adventurer"
+      },
+      {
+        "id": "C",
+        "text": "I’m about connection; if others are happy, I’m happy.",
+        "persona": "caretaker"
+      },
+      {
+        "id": "D",
+        "text": "I want something with character—even if it’s polarizing.",
+        "persona": "iconoclast"
+      }
+    ]
+  }
+]

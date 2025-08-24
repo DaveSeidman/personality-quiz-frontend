@@ -1,0 +1,77 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('assets/fonts/roboto.ttf');
+}
+
+html, body, #root, .app {
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+$white: rgb(240, 241, 242);
+
+.app {
+
+  overflow-y: hidden;
+  overflow-x: scroll;
+  background: rgb(40, 40, 40);
+
+  h1, h2, p, a, label {
+    font-family: 'Roboto';
+    color: $white;
+  }
+
+  .questions {
+    // display: flex;
+    // flex-direction: row;
+    // width: min-content;
+
+    &-question {
+      width: 100vw;
+      position: absolute;
+
+      &-text {
+      }
+
+      &-options {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+
+        &-option {
+          width: 80vw;
+          height: 10vh;
+          margin: 1vh;
+          background: rgba(255, 255, 255, .1);
+          border: 2px solid white;
+          border-radius: 2vh;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .results {
+    position: absolute;
+    inset: 0;
+  }
+
+  .start {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    padding: 1rem 2rem;
+  }
+
+  .hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
