@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import axios from 'axios';
 import { modeRandomTie, shuffle } from './utils';
 import questions from './assets/data/questions.json';
 
@@ -10,6 +11,7 @@ const App = () => {
   const [responses, setResponses] = useState([]);
   const [attract, setAttract] = useState(true);
   const [persona, setPersona] = useState();
+  const questionTimer = useRef();
 
   const timeoutRef = useRef();
   const TIMEOUT_DELAY = 20000;
@@ -24,6 +26,23 @@ const App = () => {
     });
   }
 
+  const addResponse = (e) => {
+    const startedAt = questionTimer.current ?? performance.now();
+    const delay = Math.max(0, Math.round(performance.now() - startedAt));
+    questionTimer.current = null;
+    const answerId = e.target.getAttribute('data-id')
+    const answerPersona = e.target.getAttribute('data-persona');
+    const index = e.target.getAttribute('data-index')
+
+    setResponses(prev => {
+      const next = [...prev];
+      next[index] = { persona: answerPersona, delay };
+      return next;
+    });
+
+    setQuestionIndex(questionIndex + 1);
+  }
+
   const idleTimeout = () => {
     setAttract(true);
   }
@@ -35,10 +54,12 @@ const App = () => {
 
   useEffect(() => {
     console.log(responses.length, questions.length)
+    questionTimer.current = performance.now();
+
     if (responses.length === questions.length) {
-      const nextPersona = modeRandomTie(responses);
-      console.log({ nextPersona })
-      setPersona(nextPersona);
+      axios.post('http://localhost:8000/persona', { responses }).then(res => {
+        console.log(res.data)
+      })
     }
   }, [responses.length])
 
@@ -65,14 +86,11 @@ const App = () => {
               {question.options.map(option => (
                 <button
                   key={option.id}
+                  data-index={i}
+                  data-id={option.id}
+                  data-persona={option.persona}
                   className="questions-question-options-option"
-                  onClick={(e) => {
-                    setResponses(prev => {
-                      setQuestionIndex(questionIndex + 1);
-                      prev[i] = option.id;
-                      return prev
-                    })
-                  }}
+                  onClick={addResponse}
                 >{`${option.id} - ${option.text}`}</button>
               ))}
             </div>
