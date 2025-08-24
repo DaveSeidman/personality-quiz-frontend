@@ -3,6 +3,19 @@
   src: url('assets/fonts/roboto.ttf');
 }
 
+@font-face {
+  font-family: 'Love Light';
+  src: url('assets/fonts/LoveLight-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Bad Script';
+  src: url('assets/fonts/BadScript-Regular.ttf');
+}
+
+$white: rgb(240, 241, 242);
+$black: rgb(10, 9, 8);
+
 html, body, #root, .app {
   font-size: 16px;
   width: 100%;
@@ -13,48 +26,92 @@ html, body, #root, .app {
   height: 100%;
 }
 
-$white: rgb(240, 241, 242);
-
 .app {
-
   overflow-y: hidden;
   overflow-x: scroll;
-  background: rgb(40, 40, 40);
+  background: $black;
 
   h1, h2, p, a, button, label {
-    font-family: 'Roboto';
+    font-family: 'Love Light';
     color: $white;
+    text-rendering: geometricPrecision;
+    font-weight: 100;
   }
 
   button {
     margin: 1vh;
-    background: rgba(255, 255, 255, .1);
-    border: 2px solid white;
+    background: rgba(2, 30, 45, 0.2);
+    border: 1px solid $white;
     border-radius: 2vh;
     font-size: 1.5rem;
+    backdrop-filter: blur(5px) brightness(150%);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .3);
+  }
+
+  .background {
+    position: absolute;
+    inset: 0;
+    transition: opacity 1s, visibility 1s;
+    // opacity: .5;
+
+    &.hidden {
+      opacity: .5;
+      visibility: visible;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   .questions {
-    // display: flex;
-    // flex-direction: row;
-    // width: min-content;
+    width: 100%;
+    height: 100%;
 
     &-question {
       width: 100vw;
       position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
       &-text {
+        font-size: 6rem;
+        font-weight: 100;
+        text-align: center;
+        text-shadow: 0 10px 20px rgba(0, 0, 0, .8);
+        opacity: 0;
+        transition: opacity 1s;
       }
 
       &-options {
         display: flex;
         flex-direction: column;
-        width: 400px;
 
         &-option {
-          width: 80vw;
-          height: 10vh;
+          margin: 0;
+          font-family: 'Bad Script';
+          line-height: 6rem;
+          font-size: 4rem;
+          padding: 2rem 4rem;
+          letter-spacing: -1px;
+          transform: scaleY(.8);
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 1s, visibility 1s;
+          transition-delay: var(--delay);
         }
+      }
+
+      &:not(.hidden) .questions-question-options-option {
+        opacity: 1;
+        visibility: visible;
+      }
+      &:not(.hidden) .questions-question-text {
+        opacity: 1;
       }
     }
   }
@@ -62,10 +119,45 @@ $white: rgb(240, 241, 242);
   .results {
     position: absolute;
     inset: 0;
+
+    &-title {
+      text-align: center;
+      font-size: 10rem;
+      margin: 2rem;
+    }
+
+    &-subtitle {
+      text-align: center;
+      font-size: 5rem;
+      margin: 5rem;
+
+      p {
+        display: inline;
+        font-family: 'Bad Script';
+
+        &.bold {
+          font-family: 'Love Light';
+          font-weight: 500;
+          font-size: 7rem;
+          margin: 0 2rem;
+        }
+      }
+    }
+
+    &-poem {
+      font-size: 4rem;
+      text-align: center;
+
+      &-line {
+        margin: 0 2rem;
+        font-family: 'Bad Script';
+      }
+    }
   }
 
-  .start {
+  .start, .restart {
     position: absolute;
+    font-family: 'Roboto';
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

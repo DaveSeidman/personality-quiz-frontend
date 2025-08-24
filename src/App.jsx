@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { modeRandomTie, shuffle } from './utils';
 import questions from './assets/data/questions.json';
+import backgroundVideo from './assets/videos/background1.mp4';
 
 import './index.scss';
 
@@ -32,11 +33,12 @@ const App = () => {
     questionTimer.current = null;
     const answerId = e.target.getAttribute('data-id')
     const answerPersona = e.target.getAttribute('data-persona');
+    const order = parseInt(e.target.getAttribute('data-order'));
     const index = e.target.getAttribute('data-index')
 
     setResponses(prev => {
       const next = [...prev];
-      next[index] = { persona: answerPersona, delay };
+      next[index] = { persona: answerPersona, order, delay };
       return next;
     });
 
@@ -59,6 +61,7 @@ const App = () => {
     if (responses.length === questions.length) {
       axios.post('http://localhost:8000/persona', { responses }).then(res => {
         console.log(res.data)
+        setPersona(res.data);
       })
     }
   }, [responses.length])
@@ -75,6 +78,9 @@ const App = () => {
 
   return (
     <div className='app'>
+      <div className={`background ${questionIndex >= 0 ? 'hidden' : ''}`}>
+        <video src={backgroundVideo} muted loop autoPlay playsInline />
+      </div>
       <div className="questions">
         {questions.map((question, i) => (
           <div
@@ -83,15 +89,17 @@ const App = () => {
           >
             <h1 className="questions-question-text">{question.text}</h1>
             <div className="questions-question-options">
-              {question.options.map(option => (
+              {question.options.map((option, order) => (
                 <button
                   key={option.id}
                   data-index={i}
                   data-id={option.id}
                   data-persona={option.persona}
+                  data-order={order + 1}
+                  style={{ '--delay': `${(order + 1) / 2}s` }}
                   className="questions-question-options-option"
                   onClick={addResponse}
-                >{`${option.id} - ${option.text}`}</button>
+                >{option.text}</button>
               ))}
             </div>
           </div>
@@ -99,21 +107,27 @@ const App = () => {
       </div>
 
       <div className={`results ${questionIndex >= questions.length ? '' : 'hidden'}`}>
-        <h1>Congratulations</h1>
-        <p>{persona}</p>
+        <h1 className="results-title">Congratulations...</h1>
+        <div className="results-subtitle">
+          <p>{`You are a`}</p><p className="bold">{persona?.name}</p></div>
+        <div className="results-poem">{
+          persona?.poem?.map(line => (
+            <p className="results-poem-line">{line}</p>
+          ))}
+        </div>
         <button
           className="results-restart"
           onClick={start}
-        >Restart</button>
+        >
+          Restart
+        </button>
       </div>
-
       <button
         className={`start ${questionIndex === undefined ? '' : 'hidden'}`}
         onClick={start}
       >
         Begin
       </button>
-
     </div>
   );
 }

@@ -5,7 +5,7 @@
     "options": [
       {
         "id": "A",
-        "text": "Sketch a quick plan: reservation, exhibit, dinner, done.",
+        "text": "Sketch a quick plan: reservations, exhibit, dinner, cocktails.",
         "persona": "navigator"
       },
       {
@@ -53,7 +53,7 @@
   },
   {
     "id": "q3",
-    "text": "You find a wallet on the subway platform. What do you do?",
+    "text": "You find a wallet full of cash on the subway platform. What do you do?",
     "options": [
       {
         "id": "A",
@@ -67,7 +67,7 @@
       },
       {
         "id": "C",
-        "text": "Ask nearby riders; wait a few minutes, then agent.",
+        "text": "Ask nearby riders; wait a few minutes, then pocket the cash and leave.",
         "persona": "caretaker"
       },
       {
