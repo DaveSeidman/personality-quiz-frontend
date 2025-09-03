@@ -5,22 +5,22 @@
     "options": [
       {
         "id": "A",
-        "text": "Sketch a quick plan: reservations, exhibit, dinner, cocktails.",
+        "text": "Sketch a quick plan: reservations, exhibit, dinner, cocktails",
         "persona": "navigator"
       },
       {
         "id": "B",
-        "text": "Grab a backpack and chase whatever sounds fun—no itinerary.",
+        "text": "Grab a backpack and chase whatever sounds fun—no itinerary",
         "persona": "adventurer"
       },
       {
         "id": "C",
-        "text": "Text friends/family and organize something everyone enjoys.",
+        "text": "Text friends/family and organize something everyone enjoys",
         "persona": "caretaker"
       },
       {
         "id": "D",
-        "text": "Find a weird pop-up/underground show nobody’s heard of.",
+        "text": "Find a weird pop-up/underground show nobody's heard of",
         "persona": "iconoclast"
       }
     ]
@@ -31,22 +31,22 @@
     "options": [
       {
         "id": "A",
-        "text": "Ask for the closest alternative and pick the nearest match.",
+        "text": "Ask for the closest alternative and pick the nearest match",
         "persona": "navigator"
       },
       {
         "id": "B",
-        "text": "Tell them to surprise you or choose something you’ve never tried.",
+        "text": "Tell them to surprise you or choose something you've never tried",
         "persona": "adventurer"
       },
       {
         "id": "C",
-        "text": "Check what your table is getting and pivot so you can share.",
+        "text": "Check what your table is getting and pivot so you can share",
         "persona": "caretaker"
       },
       {
         "id": "D",
-        "text": "Ask about off-menu options or customize something unusual.",
+        "text": "Ask about off-menu options or customize something unusual",
         "persona": "iconoclast"
       }
     ]
@@ -57,48 +57,48 @@
     "options": [
       {
         "id": "A",
-        "text": "Hand it to the station agent; leave your contact.",
+        "text": "Hand it to the station agent; leave your contact",
         "persona": "navigator"
       },
       {
         "id": "B",
-        "text": "Call the first ID/number and return it immediately.",
+        "text": "Call the first ID/number and return it immediately",
         "persona": "adventurer"
       },
       {
         "id": "C",
-        "text": "Ask nearby riders; wait a few minutes, then pocket the cash and leave.",
+        "text": "Ask nearby riders; wait a few minutes, then pocket the cash and leave",
         "persona": "caretaker"
       },
       {
         "id": "D",
-        "text": "Drop at nearest precinct and post a quick 'found' note.",
+        "text": "Drop at nearest precinct and post a quick 'found' note",
         "persona": "iconoclast"
       }
     ]
   },
   {
     "id": "q4",
-    "text": "Which statement feels most like you right now?",
+    "text": "It's midnight and you just landed in JFK, your friend texts they can't pick you up anymore",
     "options": [
       {
-        "id": "A",
-        "text": "I’m disciplined; I like dependable results.",
+        "key": "A",
+        "text": "Ask for more heads-up next time",
         "persona": "navigator"
       },
       {
-        "id": "B",
-        "text": "I chase energy; I’ll trade polish for excitement.",
+        "key": "B",
+        "text": "Send a light “all good!” and mentally drop it—keep the night moving",
         "persona": "adventurer"
       },
       {
-        "id": "C",
-        "text": "I’m about connection; if others are happy, I’m happy.",
+        "key": "C",
+        "text": "Check they're okay, assume good intent, and suggest another time to connect",
         "persona": "caretaker"
       },
       {
-        "id": "D",
-        "text": "I want something with character—even if it’s polarizing.",
+        "key": "D",
+        "text": "Be candid and propose a new norm to avoid repeats",
         "persona": "iconoclast"
       }
     ]

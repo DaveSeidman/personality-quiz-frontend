@@ -55,7 +55,6 @@ const App = () => {
   }
 
   useEffect(() => {
-    console.log(responses.length, questions.length)
     questionTimer.current = performance.now();
 
     if (responses.length === questions.length) {
@@ -96,7 +95,7 @@ const App = () => {
                   data-id={option.id}
                   data-persona={option.persona}
                   data-order={order + 1}
-                  style={{ '--delay': `${(order + 1) / 2}s` }}
+                  style={{ transitionDelay: `${(order + 1) / 2}s` }}
                   className="questions-question-options-option"
                   onClick={addResponse}
                 >{option.text}</button>
@@ -112,11 +111,11 @@ const App = () => {
           <p>{`You are a`}</p><p className="bold">{persona?.name}</p></div>
         <div className="results-poem">{
           persona?.poem?.map(line => (
-            <p className="results-poem-line">{line}</p>
+            <p className="results-poem-line" dangerouslySetInnerHTML={{ __html: line }} />
           ))}
         </div>
         <button
-          className="results-restart"
+          className="restart"
           onClick={start}
         >
           Restart
