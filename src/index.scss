@@ -27,8 +27,6 @@ html, body, #root, .app {
 }
 
 .app {
-  overflow-y: hidden;
-  overflow-x: scroll;
   background: $black;
 
   h1, h2, p, a, button, label {
@@ -39,10 +37,10 @@ html, body, #root, .app {
   }
 
   button {
-    margin: 1vh;
+    margin: 1rem;
     background: rgba(2, 30, 45, 0.2);
     border: 1px solid $white;
-    border-radius: 2vh;
+    border-radius: 2rem;
     font-size: 1.5rem;
     backdrop-filter: blur(5px) brightness(150%);
     box-shadow: 0 10px 20px rgba(0, 0, 0, .3);
@@ -52,7 +50,6 @@ html, body, #root, .app {
     position: absolute;
     inset: 0;
     transition: opacity 1s, visibility 1s;
-    // opacity: .5;
 
     &.hidden {
       opacity: .5;
@@ -72,51 +69,70 @@ html, body, #root, .app {
 
     &-question {
       width: 100vw;
+      height: 100vh;
       position: absolute;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      text-wrap: balance;
 
       &-text {
-        font-size: 5rem;
+        // height: 6rem;
+        // text-wrap: pretty;
+        font-size: 4rem;
         font-weight: 300;
         text-align: center;
         font-family: 'Lexend';
         text-shadow: 0 10px 20px rgba(0, 0, 0, .8);
-        opacity: 0;
         transition: opacity 1s;
-        margin: 4rem;
+        margin: 3rem;
+        opacity: 0;
       }
 
       &-options {
+        height: calc(100vh - 6rem);
+        // outline: 2px solid red;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        gap: 3rem;
+        gap: 1rem;
 
         &-option {
-          margin: 0;
-          width: calc(50% - 8rem);
-          height: 24rem;
-          font-family: 'Bad Script';
-          line-height: 6rem;
-          font-size: 4rem;
-          padding: 2rem 4rem;
-          letter-spacing: -1px;
-          opacity: 0;
-          visibility: hidden;
+          width: calc(50% - 5rem);
+          height: 50%;
+          // flex: 2;
+          // height: 30rem;
           transition: opacity 1s, visibility 1s;
+          opacity: 0;
+
+          p {            margin: 0;
+            font-family: 'Bad Script';
+            line-height: 6rem;
+            font-size: 4rem;
+            padding: 2rem 4rem;
+            letter-spacing: -1px;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 2rem;
+          }
         }
       }
 
-      &:not(.hidden) .questions-question-options-option {
-        opacity: 1;
-        visibility: visible;
-      }
-      &:not(.hidden) .questions-question-text {
-        opacity: 1;
+      &.active {
+        .questions-question {
+          &-text {
+            opacity: 1;
+          }
+          &-options-option {
+            opacity: 1;
+          }
+        }
       }
     }
   }
@@ -126,9 +142,14 @@ html, body, #root, .app {
     inset: 0;
 
     &-title {
+      font-family: 'Lexend';
+      font-weight: 200;
+      text-transform: uppercase;
+
       text-align: center;
-      font-size: 10rem;
-      margin: 2rem;
+      font-size: 6rem;
+      letter-spacing: 5px;
+      margin: 4rem;
     }
 
     &-subtitle {

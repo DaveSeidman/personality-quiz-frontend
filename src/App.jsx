@@ -8,7 +8,7 @@ import './index.scss';
 
 const App = () => {
 
-  const [questionIndex, setQuestionIndex] = useState();
+  const [questionIndex, setQuestionIndex] = useState(null);
   const [responses, setResponses] = useState([]);
   const [attract, setAttract] = useState(true);
   const [persona, setPersona] = useState();
@@ -16,7 +16,7 @@ const App = () => {
 
   const timeoutRef = useRef();
   const TIMEOUT_DELAY = 20000;
-  const TIMEOUT_DURATION = 5000;
+  const TIMEOUT_DURATION = 5000; // use this only if we want an "are you still there?" screen
 
   const start = () => {
     setQuestionIndex(0);
@@ -77,14 +77,14 @@ const App = () => {
 
   return (
     <div className='app'>
-      <div className={`background ${questionIndex >= 0 ? 'hidden' : ''}`}>
+      <div className={`background ${questionIndex !== null && questionIndex >= 0 ? 'hidden' : ''}`}>
         <video src={backgroundVideo} muted loop autoPlay playsInline />
       </div>
       <div className="questions">
         {questions.map((question, i) => (
           <div
             key={question.id}
-            className={`questions-question ${i === questionIndex ? '' : 'hidden'}`}
+            className={`questions-question ${i === questionIndex ? 'active' : ''}`}
           >
             <h1 className="questions-question-text">{question.text}</h1>
             <div className="questions-question-options">
@@ -98,7 +98,10 @@ const App = () => {
                   style={{ transitionDelay: `${(order + 1) / 2}s` }}
                   className="questions-question-options-option"
                   onClick={addResponse}
-                >{option.text}</button>
+                >{option.image
+                  ? (<img src={option.image} />)
+                  : (<p>{option.text}</p>)}
+                </button>
               ))}
             </div>
           </div>
@@ -108,7 +111,7 @@ const App = () => {
       <div className={`results ${questionIndex >= questions.length ? '' : 'hidden'}`}>
         <h1 className="results-title">Congratulations...</h1>
         <div className="results-subtitle">
-          <p>{`You are a`}</p><p className="bold">{persona?.name}</p></div>
+          <p>{`You are the`}</p><p className="bold">{persona?.name}</p></div>
         <div className="results-poem">{
           persona?.poem?.map(line => (
             <p className="results-poem-line" dangerouslySetInnerHTML={{ __html: line }} />
@@ -122,7 +125,7 @@ const App = () => {
         </button>
       </div>
       <button
-        className={`start ${questionIndex === undefined ? '' : 'hidden'}`}
+        className={`start ${questionIndex === null ? '' : 'hidden'}`}
         onClick={start}
       >
         Begin

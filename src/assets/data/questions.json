@@ -1,7 +1,7 @@
 [
   {
     "id": "q1",
-    "text": "Your weekend gets unexpectedly free. What do you do?",
+    "text": "Your weekend unexpectedly frees up. What do you do?",
     "options": [
       {
         "id": "A",
@@ -53,26 +53,30 @@
   },
   {
     "id": "q3",
-    "text": "You find a wallet full of cash on the subway platform. What do you do?",
+    "text": "What does Out-of-office mean to you?",
     "options": [
       {
         "id": "A",
         "text": "Hand it to the station agent; leave your contact",
+        "image": "beach.png",
         "persona": "navigator"
       },
       {
         "id": "B",
         "text": "Call the first ID/number and return it immediately",
+        "image": "hiking.png",
         "persona": "adventurer"
       },
       {
         "id": "C",
         "text": "Ask nearby riders; wait a few minutes, then pocket the cash and leave",
+        "image": "cafe.png",
         "persona": "caretaker"
       },
       {
         "id": "D",
         "text": "Drop at nearest precinct and post a quick 'found' note",
+        "image": "couch.png",
         "persona": "iconoclast"
       }
     ]
