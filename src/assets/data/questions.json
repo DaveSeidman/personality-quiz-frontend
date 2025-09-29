@@ -1,109 +1,94 @@
 [
   {
     "id": "q1",
-    "text": "Your weekend unexpectedly frees up. What do you do?",
+    "text": "What’s your perfect day in Greater Zion?",
     "options": [
       {
         "id": "A",
-        "text": "Sketch a quick plan: reservations, exhibit, dinner, cocktails",
-        "persona": "navigator"
+        "text": "Hiking through slot canyons, splashing in rivers, and chasing adrenaline",
+        "drink": "Pioneer’s Pour"
       },
       {
         "id": "B",
-        "text": "Grab a backpack and chase whatever sounds fun—no itinerary",
-        "persona": "adventurer"
+        "text": "Watching a red rock sunset, glamping under the stars, and savoring a local meal",
+        "drink": "Zion Sunset Swirl"
       },
       {
         "id": "C",
-        "text": "Text friends/family and organize something everyone enjoys",
-        "persona": "caretaker"
-      },
-      {
-        "id": "D",
-        "text": "Find a weird pop-up/underground show nobody's heard of",
-        "persona": "iconoclast"
+        "text": "Exploring town, biking with friends, then stargazing with hot cocoa",
+        "drink": "Greater-ade"
       }
     ]
   },
   {
     "id": "q2",
-    "text": "You pick the perfect entree from the menu. The waiter says they're out. What do you do?",
+    "text": "Pick your dream Greater Zion backdrop",
     "options": [
       {
         "id": "A",
-        "text": "Ask for the closest alternative and pick the nearest match",
-        "persona": "navigator"
+        "text": "Rushing water and dramatic cliffs (Narrows)"
       },
       {
         "id": "B",
-        "text": "Tell them to surprise you or choose something you've never tried",
-        "persona": "adventurer"
+        "text": "Fiery sunset and star-filled sky (sunset/stargazing image)"
       },
       {
         "id": "C",
-        "text": "Check what your table is getting and pivot so you can share",
-        "persona": "caretaker"
-      },
-      {
-        "id": "D",
-        "text": "Ask about off-menu options or customize something unusual",
-        "persona": "iconoclast"
+        "text": "Buzzing town with live music and friends (Downtown)"
       }
     ]
   },
   {
     "id": "q3",
-    "text": "What does Out-of-office mean to you?",
+    "text": "What kind of adventure excites you most?",
     "options": [
       {
         "id": "A",
-        "text": "Hand it to the station agent; leave your contact",
-        "image": "beach.png",
-        "persona": "navigator"
+        "text": "Mountain biking or hiking"
       },
       {
         "id": "B",
-        "text": "Call the first ID/number and return it immediately",
-        "image": "hiking.png",
-        "persona": "adventurer"
+        "text": "Stargazing or soaking in hot springs"
       },
       {
         "id": "C",
-        "text": "Ask nearby riders; wait a few minutes, then pocket the cash and leave",
-        "image": "cafe.png",
-        "persona": "caretaker"
-      },
-      {
-        "id": "D",
-        "text": "Drop at nearest precinct and post a quick 'found' note",
-        "image": "couch.png",
-        "persona": "iconoclast"
+        "text": "Golfing on the beautiful courses"
       }
     ]
   },
   {
     "id": "q4",
-    "text": "It's midnight and you just landed in JFK, your friend texts they can't pick you up anymore",
+    "text": "How do you like to refuel after a day outside?",
     "options": [
       {
-        "key": "A",
-        "text": "Ask for more heads-up next time",
-        "persona": "navigator"
+        "id": "A",
+        "text": "Something cool, citrusy, and energizing"
       },
       {
-        "key": "B",
-        "text": "Send a light “all good!” and mentally drop it—keep the night moving",
-        "persona": "adventurer"
+        "id": "B",
+        "text": "Something creamy, sweet, and indulgent"
       },
       {
-        "key": "C",
-        "text": "Check they're okay, assume good intent, and suggest another time to connect",
-        "persona": "caretaker"
+        "id": "C",
+        "text": "Something refreshing and hydrating"
+      }
+    ]
+  },
+  {
+    "id": "q5",
+    "text": "Which “No Greater Feeling” moment speaks to you most?",
+    "options": [
+      {
+        "id": "A",
+        "text": "That thrill of conquering a climb"
       },
       {
-        "key": "D",
-        "text": "Be candid and propose a new norm to avoid repeats",
-        "persona": "iconoclast"
+        "id": "B",
+        "text": "That hush of watching the desert glow at sunset"
+      },
+      {
+        "id": "C",
+        "text": "That buzz of sharing laughs with friends under the stars"
       }
     ]
   }
