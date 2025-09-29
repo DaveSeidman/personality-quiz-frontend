@@ -65,9 +65,9 @@ const App = () => {
       // })
 
       const bestOption = getBestOption(responses);
-      // console.log({ bestOption })
+      console.log({ bestOption })
       const matchedPersonality = personas.find(p => p.id === bestOption.id)
-      // console.log({ matchedPersonality })
+      console.log({ matchedPersonality })
       setPersona(matchedPersonality)
     }
   }, [responses.length])
