@@ -5,18 +5,15 @@
     "options": [
       {
         "id": "A",
-        "text": "Hiking through slot canyons, splashing in rivers, and chasing adrenaline",
-        "drink": "Pioneer’s Pour"
+        "text": "Hiking through slot canyons, splashing in rivers, and chasing adrenaline"
       },
       {
         "id": "B",
-        "text": "Watching a red rock sunset, glamping under the stars, and savoring a local meal",
-        "drink": "Zion Sunset Swirl"
+        "text": "Watching a red rock sunset, glamping under the stars, and savoring a local meal"
       },
       {
         "id": "C",
-        "text": "Exploring town, biking with friends, then stargazing with hot cocoa",
-        "drink": "Greater-ade"
+        "text": "Exploring town, biking with friends, then stargazing with hot cocoa"
       }
     ]
   },
@@ -26,15 +23,18 @@
     "options": [
       {
         "id": "A",
-        "text": "Rushing water and dramatic cliffs (Narrows)"
+        "text": "Rushing water and dramatic cliffs (Narrows)",
+        "photo": "images/narrows-hikers-winter.jpg"
       },
       {
         "id": "B",
-        "text": "Fiery sunset and star-filled sky (sunset/stargazing image)"
+        "text": "Fiery sunset and star-filled sky (sunset/stargazing image)",
+        "photo": "images/hot-air-balloons.jpg"
       },
       {
         "id": "C",
-        "text": "Buzzing town with live music and friends (Downtown)"
+        "text": "Buzzing town with live music and friends (Downtown)",
+        "photo": "images/tuacahn-amphitheatre.jpg"
       }
     ]
   },
@@ -44,15 +44,18 @@
     "options": [
       {
         "id": "A",
-        "text": "Mountain biking or hiking"
+        "text": "Mountain biking or hiking",
+        "photo": "images/mountain-biking-man-jem-trail.jpg"
       },
       {
         "id": "B",
-        "text": "Stargazing or soaking in hot springs"
+        "text": "Stargazing or soaking in hot springs",
+        "photo": "images/stargazing-zion-sotto.jpg"
       },
       {
         "id": "C",
-        "text": "Golfing on the beautiful courses"
+        "text": "Golfing on the beautiful courses",
+        "photo": "images/sand-hollow-golf-course.jpg"
       }
     ]
   },
