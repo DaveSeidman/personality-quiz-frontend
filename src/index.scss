@@ -71,9 +71,9 @@ html, body, #root, .app {
       align-items: center;
       text-wrap: balance;
 
-      &:not(.active) {
-        pointer-events: none;
-      }
+      // &:not(.active) {
+      //   pointer-events: none;
+      // }
 
       &-text {
         font-family: 'True North';
@@ -86,7 +86,7 @@ html, body, #root, .app {
         text-shadow: 0 10px 20px rgba(0, 0, 0, .8);
         transition: opacity 1s;
         margin: 3rem;
-        opacity: 0;
+        // opacity: 0;
       }
 
       &-options {
@@ -104,7 +104,7 @@ html, body, #root, .app {
           // flex: 2;
           // height: 30rem;
           transition: opacity 1s, visibility 1s;
-          opacity: 0;
+          // opacity: 0;
 
           & * {
             pointer-events: none;
@@ -128,16 +128,16 @@ html, body, #root, .app {
         }
       }
 
-      &.active {
-        .questions-question {
-          &-text {
-            opacity: 1;
-          }
-          &-options-option {
-            opacity: 1;
-          }
-        }
-      }
+      // &.active {
+      //   .questions-question {
+      //     &-text {
+      //       opacity: 1;
+      //     }
+      //     &-options-option {
+      //       opacity: 1;
+      //     }
+      //   }
+      // }
     }
   }
 
@@ -174,18 +174,9 @@ html, body, #root, .app {
       }
     }
 
-    &-poem {
+    &-description {
       font-size: 4rem;
       text-align: center;
-
-      &-line {
-        margin: 0 2rem;
-        font-family: 'Bad Script';
-
-        em {
-          text-decoration: underline;
-        }
-      }
     }
   }
 

@@ -92,7 +92,7 @@ const App = () => {
         {questions.map((question, questionIndex) => (
           <div
             key={question.id}
-            className={`questions-question ${questionIndex === currentQuestion ? 'active' : ''}`}
+            className={`questions-question ${questionIndex === currentQuestion ? '' : 'hidden'}`}
           >
             <h1 className="questions-question-text">{question.text}</h1>
             <div className="questions-question-options">
@@ -103,7 +103,7 @@ const App = () => {
                   data-id={option.id}
                   data-persona={option.persona}
                   data-order={order + 1}
-                  // style={{ transitionDelay: `${(order + 1) / 2}s` }}
+                  style={{ transitionDelay: `${(order + 1) / 2}s` }}
                   className="questions-question-options-option"
                   onClick={addResponse}
                 >{option.image
