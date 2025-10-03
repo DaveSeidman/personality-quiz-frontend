@@ -71,40 +71,29 @@ html, body, #root, .app {
       align-items: center;
       text-wrap: balance;
 
-      // &:not(.active) {
-      //   pointer-events: none;
-      // }
-
       &-text {
         font-family: 'True North';
-        // height: 6rem;
-        // text-wrap: pretty;
+        text-wrap: pretty;
         font-size: 4rem;
         font-weight: 300;
         text-align: center;
-        // font-family: 'Lexend';
         text-shadow: 0 10px 20px rgba(0, 0, 0, .8);
         transition: opacity 1s;
         margin: 3rem;
-        // opacity: 0;
       }
 
       &-options {
-        // height: calc(100vh - 12rem);
-        // outline: 2px solid red;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+        height: calc(100% - 10rem);
         gap: 1rem;
 
         &-option {
           width: calc(50% - 5rem);
           height: 50%;
-          // flex: 2;
-          // height: 30rem;
           transition: opacity 1s, visibility 1s;
-          // opacity: 0;
 
           & * {
             pointer-events: none;
@@ -112,8 +101,6 @@ html, body, #root, .app {
 
           p {            
             margin: 0;
-            // font-family: 'Bad Script';
-            // line-height: 6rem;
             font-size: 3rem;
             padding: 2rem 4rem;
             letter-spacing: -1px;
@@ -127,17 +114,6 @@ html, body, #root, .app {
           }
         }
       }
-
-      // &.active {
-      //   .questions-question {
-      //     &-text {
-      //       opacity: 1;
-      //     }
-      //     &-options-option {
-      //       opacity: 1;
-      //     }
-      //   }
-      // }
     }
   }
 

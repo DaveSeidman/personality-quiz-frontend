@@ -106,8 +106,8 @@ const App = () => {
                   style={{ transitionDelay: `${(order + 1) / 2}s` }}
                   className="questions-question-options-option"
                   onClick={addResponse}
-                >{option.image
-                  ? (<img src={option.image} />)
+                >{option.photo
+                  ? (<img src={option.photo} />)
                   : (<p>{option.text}</p>)}
                 </button>
               ))}
