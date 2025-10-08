@@ -24,17 +24,20 @@
       {
         "id": "A",
         "text": "Rushing water and dramatic cliffs (Narrows)",
-        "photo": "images/narrows-hikers-winter.jpg"
+        "photo": "images/narrows-hikers-winter.jpg",
+        "video": "videos/cave.mp4"
       },
       {
         "id": "B",
         "text": "Fiery sunset and star-filled sky (sunset/stargazing image)",
-        "photo": "images/hot-air-balloons.jpg"
+        "photo": "images/hot-air-balloons.jpg",
+        "video": "videos/sunset.mp4"
       },
       {
         "id": "C",
         "text": "Buzzing town with live music and friends (Downtown)",
-        "photo": "images/tuacahn-amphitheatre.jpg"
+        "photo": "images/tuacahn-amphitheatre.jpg",
+        "video": "videos/ampitheatre.mp4"
       }
     ]
   },
@@ -45,17 +48,20 @@
       {
         "id": "A",
         "text": "Mountain biking or hiking",
-        "photo": "images/mountain-biking-man-jem-trail.jpg"
+        "photo": "images/mountain-biking-man-jem-trail.jpg",
+        "video": "videos/bike.mp4"
       },
       {
         "id": "B",
         "text": "Stargazing or soaking in hot springs",
-        "photo": "images/stargazing-zion-sotto.jpg"
+        "photo": "images/stargazing-zion-sotto.jpg",
+        "video": "videos/stargazing.mp4"
       },
       {
         "id": "C",
         "text": "Golfing on the beautiful courses",
-        "photo": "images/sand-hollow-golf-course.jpg"
+        "photo": "images/sand-hollow-golf-course.jpg",
+        "video": "videos/golf.mp4"
       }
     ]
   },

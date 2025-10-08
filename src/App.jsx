@@ -85,7 +85,7 @@ const App = () => {
   return (
     <div className='app'>
       <div className={`background ${currentQuestion !== null && currentQuestion >= 0 ? 'hidden' : ''}`}>
-        <video src={backgroundVideo} muted loop autoPlay playsInline />
+        {/* <video src={backgroundVideo} muted loop autoPlay playsInline /> */}
       </div>
 
       <div className="questions">
@@ -95,7 +95,7 @@ const App = () => {
             className={`questions-question ${questionIndex === currentQuestion ? '' : 'hidden'}`}
           >
             <h1 className="questions-question-text">{question.text}</h1>
-            <div className="questions-question-options">
+            <div className={`questions-question-options ${question.options[0].video ? 'videos' : ''}`}>
               {question.options.map((option, order) => (
                 <button
                   key={option.id}
@@ -106,8 +106,8 @@ const App = () => {
                   style={{ transitionDelay: `${(order + 1) / 2}s` }}
                   className="questions-question-options-option"
                   onClick={addResponse}
-                >{option.photo
-                  ? (<img src={option.photo} />)
+                >{option.video
+                  ? (<video autoPlay muted playsInline loop><source src={option.video} /></video>)
                   : (<p>{option.text}</p>)}
                 </button>
               ))}
