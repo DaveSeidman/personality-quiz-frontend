@@ -91,14 +91,12 @@ const App = () => {
       <div className="questions">
         {questions.map((question, questionIndex) => (
           <div
-            // key={question.id}
             className={`questions-question ${questionIndex === currentQuestion ? '' : 'hidden'}`}
           >
             <h1 className="questions-question-text">{question.text}</h1>
             <div className={`questions-question-options ${question.options[0].video ? 'videos' : ''}`}>
               {question.options.map((option, order) => (
                 <button
-                  // key={option.id}
                   data-index={questionIndex}
                   data-id={option.id}
                   data-persona={option.persona}
