@@ -15,7 +15,7 @@ const App = () => {
   const questionTimer = useRef();
 
   const timeoutRef = useRef();
-  const TIMEOUT_DELAY = 5000;
+  const TIMEOUT_DELAY = 45000;
   const TIMEOUT_DURATION = 30000; // use this only if we want an "are you still there?" screen
 
   const start = () => {
