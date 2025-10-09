@@ -7,7 +7,7 @@ import backgroundVideo from './assets/videos/background1.mp4';
 import './index.scss';
 
 const App = () => {
-
+  const [fullscreen, setFullscreen] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(null);
   const [responses, setResponses] = useState([]);
   const [attract, setAttract] = useState(true);
@@ -19,13 +19,27 @@ const App = () => {
   const TIMEOUT_DURATION = 5000; // use this only if we want an "are you still there?" screen
 
   const start = () => {
-    setCurrentQuestion(0);
-    setResponses([]);
-    setPersona();
+    setTimeout(() => {
+      setCurrentQuestion(0);
+      setResponses([]);
+      setPersona();
+    }, 600);
     questions.forEach(question => {
       question.options = shuffle(question.options);
     });
   }
+
+  const handleFullscreenChange = () => {
+    setFullscreen(document.fullscreenElement !== null);
+  };
+
+  useEffect(() => {
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    return () => {
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+    };
+  }, []);
+
 
   const addResponse = (e) => {
     // console.log(e.target)
@@ -127,6 +141,22 @@ const App = () => {
       >
         Tap to Begin
       </button>
+      {!fullscreen && (
+        <button
+          type="button"
+          className="fullscreen"
+          onClick={async () => {
+            try {
+              await document.documentElement.requestFullscreen();
+              setFullscreen(true);
+            } catch (err) {
+              console.error("Failed to enter fullscreen:", err);
+            }
+          }}
+        >
+          Fullscreen
+        </button>
+      )}
     </div>
   );
 }
