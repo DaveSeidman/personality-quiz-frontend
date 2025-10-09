@@ -10,13 +10,13 @@ const App = () => {
   const [fullscreen, setFullscreen] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(null);
   const [responses, setResponses] = useState([]);
-  const [attract, setAttract] = useState(true);
+  // const [attract, setAttract] = useState(true);
   const [persona, setPersona] = useState();
   const questionTimer = useRef();
 
   const timeoutRef = useRef();
-  const TIMEOUT_DELAY = 20000;
-  const TIMEOUT_DURATION = 5000; // use this only if we want an "are you still there?" screen
+  const TIMEOUT_DELAY = 5000;
+  const TIMEOUT_DURATION = 30000; // use this only if we want an "are you still there?" screen
 
   const start = () => {
     setTimeout(() => {
@@ -28,6 +28,12 @@ const App = () => {
       question.options = shuffle(question.options);
     });
   }
+
+  // const reset = () => {
+  //   setCurrentQuestion(0);
+  //   setResponses([]);
+  //   setPersona();
+  // }
 
   const handleFullscreenChange = () => {
     setFullscreen(document.fullscreenElement !== null);
@@ -61,35 +67,32 @@ const App = () => {
   }
 
   const idleTimeout = () => {
-    setAttract(true);
+    // setAttract(true);
+    console.log('idle')
+    setCurrentQuestion(null);
+    setResponses([]);
+    setPersona();
   }
 
   const resetIdleTimeout = () => {
+    console.log('reset timeout')
     clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(idleTimeout, TIMEOUT_DELAY);
   }
 
   useEffect(() => {
     questionTimer.current = performance.now();
-    // console.log(responses.length, questions.length);
     if (responses.length === questions.length) {
-      // axios.post('http://localhost:8000/persona', { responses }).then(res => {
-      //   console.log(res.data)
-      //   setPersona(res.data);
-      // })
-
       const bestOption = getBestOption(responses);
-      console.log({ bestOption })
       const matchedPersonality = personas.find(p => p.id === bestOption.id)
-      console.log({ matchedPersonality })
       setPersona(matchedPersonality)
     }
   }, [responses.length])
 
   useEffect(() => {
-    addEventListener('click', resetIdleTimeout);
+    document.addEventListener('click', resetIdleTimeout);
     return (() => {
-      removeEventListener('click', resetIdleTimeout);
+      document.removeEventListener('click', resetIdleTimeout);
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }

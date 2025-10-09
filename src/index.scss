@@ -256,6 +256,8 @@ html, body, #root, .app {
     font-weight: bold;
     text-rendering: geometricPrecision;
     text-shadow: 0px 0px 5px black;
+    transition: opacity .5s, visibility .5s;
+    transition-delay: 0;
   }
 
   .restart {
