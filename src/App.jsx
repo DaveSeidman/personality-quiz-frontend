@@ -91,19 +91,19 @@ const App = () => {
       <div className="questions">
         {questions.map((question, questionIndex) => (
           <div
-            key={question.id}
+            // key={question.id}
             className={`questions-question ${questionIndex === currentQuestion ? '' : 'hidden'}`}
           >
             <h1 className="questions-question-text">{question.text}</h1>
             <div className={`questions-question-options ${question.options[0].video ? 'videos' : ''}`}>
               {question.options.map((option, order) => (
                 <button
-                  key={option.id}
+                  // key={option.id}
                   data-index={questionIndex}
                   data-id={option.id}
                   data-persona={option.persona}
                   data-order={order + 1}
-                  style={{ transitionDelay: `${(order + 1) / 2}s` }}
+                  style={{ transitionDelay: `${(order + 4) / 2}s` }}
                   className="questions-question-options-option"
                   onClick={addResponse}
                 >{option.video
@@ -118,20 +118,16 @@ const App = () => {
 
       <div className={`results ${currentQuestion >= questions.length ? '' : 'hidden'}`}>
         <h1 className="results-title">you matched with the</h1>
-        <h2 className="results-subtitle">{persona?.name}</h2>
+        <h2 className="results-persona">{persona?.name}</h2>
         <p className="results-description">{persona?.description}</p>
-        <button
-          className="restart"
-          onClick={start}
-        >
-          Restart
-        </button>
+        <p className="results-drink">Ask your Bartender for a 🥤 {persona?.drink} 🥤</p>
+        <button className="results-restart" onClick={start}>Restart</button>
       </div>
       <button
         className={`start ${currentQuestion === null ? '' : 'hidden'}`}
         onClick={start}
       >
-        Begin
+        Tap to Begin
       </button>
     </div>
   );
